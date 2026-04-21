@@ -103,11 +103,21 @@
       transform-origin: 42% 46%;
     }
 
-    @media screen and (max-width: 600px) {
+    @media screen and (max-width: 700px) {
       .email-container {
         width: 100% !important;
         max-width: 100% !important;
       }
+    }
+
+    .img-full {
+      width: 100% !important;
+      height: auto !important;
+    }
+
+    .img-card {
+      width: 120px !important;
+      height: 120px !important;
     }
   </style>
 </head>
@@ -119,8 +129,8 @@
       <td align="center" style="padding: 20px 0;">
 
         <!-- Contenedor: max-width 480px, 100% en mobile -->
-        <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="480" class="email-container"
-          style="width: 480px; max-width: 480px;">
+        <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="700" class="email-container"
+          style="width: 700px; max-width: 700px;">
 
 
           <!-- ============================================================ -->
@@ -131,50 +141,47 @@
 
 
 
-              <!-- ETIQUETA ABSOLUTA (Frame 43): barra 4 colores + label blanco -->
-              <div class="etiqueta-outer">
-                <!-- Barra 4 colores h=29 -->
-                <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
-                  <tr>
-                    <td height="29" style="background-color: #36abb2; font-size: 0; line-height: 0; width: 25%;">&nbsp;
-                    </td>
-                    <td height="29" style="background-color: #d17b23; font-size: 0; line-height: 0; width: 25%;">&nbsp;
-                    </td>
-                    <td height="29" style="background-color: #ab2058; font-size: 0; line-height: 0; width: 25%;">&nbsp;
-                    </td>
-                    <td height="29" style="background-color: #1d2600; font-size: 0; line-height: 0; width: 25%;">&nbsp;
-                    </td>
-                  </tr>
-                </table>
-                <!-- Label blanco "Formación continua / Diseño en la UCA" -->
-                <!-- En diseño: x=129/478≈27%, width=219/478≈46%, height=116px -->
-                <div
-                  style="position: absolute; top: 0; left: 27%; width: 46%; max-width: 219px; background-color: #ffffff; height: 116px; display: flex; align-items: center; justify-content: center; z-index: 6;">
-                  <div style="text-align: center; padding: 0 10px;">
-                    <p
-                      style="margin: 0; font-family: 'Stolzl', 'Raleway', Arial, sans-serif; font-size: 16px; font-weight: 400; color: #000000; letter-spacing: -0.97px; line-height: 0.99;">
-                      Formación continua</p>
-                    <p
-                      style="margin: 2px 0 0 0; font-family: 'Stolzl', 'Raleway', Arial, sans-serif; font-size: 14.5px; font-weight: 400; color: rgba(0,0,0,0.61); letter-spacing: -0.87px; line-height: 0.99;">
-                      Diseño en la UCA</p>
-                  </div>
-                </div>
-              </div>
+              <!-- ETIQUETA (email-safe): 3 columnas → colores | label blanco centrado | colores -->
+              <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tr>
+                  <!-- Columna izquierda: 2 colores apilados, 27% -->
+                  <td width="27%" valign="top" style="padding: 0; font-size: 0; line-height: 0;">
+                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                      <tr>
+                        <td width="50%" height="29" style="background-color: #36abb2; font-size: 0; line-height: 0;">&nbsp;</td>
+                        <td width="50%" height="29" style="background-color: #d17b23; font-size: 0; line-height: 0;">&nbsp;</td>
+                      </tr>
+                    </table>
+                  </td>
+                  <!-- Columna centro: caja blanca, 46% -->
+                  <td width="46%" height="116" valign="middle" style="background-color: #ffffff; text-align: center; padding: 0 10px;">
+                    <p style="margin: 0; font-family: 'Stolzl', 'Raleway', Arial, sans-serif; font-size: 16px; font-weight: 400; color: #000000; letter-spacing: -0.97px; line-height: 1.2;">Formación continua</p>
+                    <p style="margin: 4px 0 0 0; font-family: 'Stolzl', 'Raleway', Arial, sans-serif; font-size: 14.5px; font-weight: 400; color: rgba(0,0,0,0.61); letter-spacing: -0.87px; line-height: 1.2;">Diseño en la UCA</p>
+                  </td>
+                  <!-- Columna derecha: 2 colores apilados, 27% -->
+                  <td width="27%" valign="top" style="padding: 0; font-size: 0; line-height: 0;">
+                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                      <tr>
+                        <td width="50%" height="29" style="background-color: #ab2058; font-size: 0; line-height: 0;">&nbsp;</td>
+                        <td width="50%" height="29" style="background-color: #1d2600; font-size: 0; line-height: 0;">&nbsp;</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
 
               <!-- Contenido del Hero -->
               <div class="hero-content" style="padding: 40px 24px;">
-                <!-- Espacio para que el contenido no quede bajo la etiqueta (h≈116px) -->
-                <div style="height: 80px;"></div>
 
                 <!-- LOGOS: UCA y DUCA en LOGOS.png -->
                 <div style="margin-bottom: 24px;">
-                  <img src="LOGOS.webp" alt="Logos UCA DUCA" width="180" style="display: block; border: 0;" />
+                  <img src="LOGOS.png" alt="Logos UCA DUCA" width="180" style="display: block; border: 0;" />
                 </div>
 
                 <!-- Título: Raleway 48px, font-weight: normal (400) -->
                 <h1
                   style="margin: 0 0 4px 0; font-family: 'Raleway', Arial, sans-serif; font-size: 48px; font-weight: 400; color: #ffffff; line-height: 1.1;">
-                  Rediseña tu forma de trabajar.</h1>
+                  Rediseña tu forma <strong>de trabajar</strong>.</h1>
 
                 <!-- Subtítulo: Raleway 18px, normal -->
                 <p
@@ -220,7 +227,7 @@
           <!-- ============================================================ -->
           <tr>
             <td style="background-color: #ab2058; padding: 0 0 40px 0;">
-              <img src="https://valssse.github.io/ducaemail/practicando.webp" alt="Estudiantes practicando" width="480"
+              <img src="https://valssse.github.io/ducaemail/practicando.webp" alt="Estudiantes practicando" width="700"
                 height="200" style="display: block; width: 100%; height: 200px; object-fit: cover;" />
               <div style="padding: 24px 24px 0 24px;">
                 <h2
@@ -252,7 +259,7 @@
           <!-- ============================================================ -->
           <tr>
             <td style="padding: 0; line-height: 0; font-size: 0;">
-              <img src="https://valssse.github.io/ducaemail/Platica%20celina.webp" alt="Plática Celina" width="480"
+              <img src="https://valssse.github.io/ducaemail/Platica%20celina.webp" alt="Plática Celina" width="700"
                 height="200" style="display: block; width: 100%; height: 200px; object-fit: cover;" />
             </td>
           </tr>
@@ -274,7 +281,7 @@
                   <td style="background-color: #36abb2; border-radius: 20px; overflow: hidden; padding: 24px 16px;">
                     <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
                       <tr>
-                        <td width="144" valign="middle"><img src="Dibujo.webp" alt="" width="129" height="129"
+                        <td width="144" valign="middle"><img src="Dibujo.png" alt="" width="129" height="129"
                             style="display: block; width: 129px; height: 129px; object-fit: contain;" /></td>
                         <td style="padding-left: 10px; vertical-align: middle;">
                           <h3
@@ -298,7 +305,7 @@
                   <td style="background-color: #e51e6e; border-radius: 20px; overflow: hidden; padding: 24px 16px;">
                     <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
                       <tr>
-                        <td width="140" valign="middle"><img src="https://valssse.github.io/ducaemail/Idea.webp" alt=""
+                        <td width="140" valign="middle"><img src="https://valssse.github.io/ducaemail/Idea.png" alt=""
                             width="140" height="140"
                             style="display: block; width: 140px; height: 140px; object-fit: contain;" /></td>
                         <td style="padding-left: 10px; vertical-align: middle;">
@@ -323,7 +330,7 @@
                   <td style="background-color: #36abb2; border-radius: 20px; overflow: hidden; padding: 24px 16px;">
                     <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
                       <tr>
-                        <td width="140" valign="middle"><img src="https://valssse.github.io/ducaemail/Manos.webp" alt=""
+                        <td width="140" valign="middle"><img src="https://valssse.github.io/ducaemail/Manos.png" alt=""
                             width="140" height="140"
                             style="display: block; width: 140px; height: 140px; object-fit: contain;" /></td>
                         <td style="padding-left: 10px; vertical-align: middle;">
@@ -348,7 +355,7 @@
                   <td style="background-color: #e51e6e; border-radius: 20px; overflow: hidden; padding: 24px 16px;">
                     <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
                       <tr>
-                        <td width="140" valign="middle"><img src="https://valssse.github.io/ducaemail/Pensae.webp"
+                        <td width="140" valign="middle"><img src="https://valssse.github.io/ducaemail/Pensae.png"
                             alt="" width="140" height="140"
                             style="display: block; width: 140px; height: 140px; object-fit: contain;" /></td>
                         <td style="padding-left: 10px; vertical-align: middle;">
@@ -372,7 +379,7 @@
                   <td style="background-color: #36abb2; border-radius: 20px; overflow: hidden; padding: 24px 16px;">
                     <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
                       <tr>
-                        <td width="140" valign="middle"><img src="https://valssse.github.io/ducaemail/Calendario.webp"
+                        <td width="140" valign="middle"><img src="https://valssse.github.io/ducaemail/Calendario.png"
                             alt="" width="140" height="140"
                             style="display: block; width: 140px; height: 140px; object-fit: contain;" /></td>
                         <td style="padding-left: 10px; vertical-align: middle;">
@@ -436,7 +443,7 @@
                 style="padding-bottom: 32px;">
                 <tr>
                   <td style="padding: 0; font-size: 0; line-height: 0;">
-                    <img src="https://valssse.github.io/ducaemail/Erick.webp" alt="Erick Martínez" width="480"
+                    <img src="https://valssse.github.io/ducaemail/Erick%201.png" alt="Erick Martínez" width="700"
                       height="292" style="display: block; width: 100%; height: 292px; object-fit: cover;" />
                   </td>
                 </tr>
@@ -464,7 +471,7 @@
           <!-- ============================================================ -->
           <tr>
             <td style="padding: 0; line-height: 0; font-size: 0;">
-              <img src="https://valssse.github.io/ducaemail/anotaciones.webp" alt="Anotaciones" width="480" height="200"
+              <img src="https://valssse.github.io/ducaemail/anotaciones.webp" alt="Anotaciones" width="700" height="200"
                 style="display: block; width: 100%; height: 200px; object-fit: cover;" />
             </td>
           </tr>
@@ -488,7 +495,7 @@
                   junto con sesiones de seguimiento virtual.</p>
               </div>
               <!-- Platica 2: full width (sin padding lateral), H200 -->
-              <img src="https://valssse.github.io/ducaemail/Platica%202.webp" alt="Metodología" width="480" height="200"
+              <img src="https://valssse.github.io/ducaemail/Platica%202.webp" alt="Metodología" width="700" height="200"
                 style="display: block; width: 100%; height: 200px; object-fit: cover;" />
             </td>
           </tr>
@@ -513,7 +520,7 @@
               </div>
               <!-- Chicos estudiando: full width (sin padding), H200 -->
               <img src="https://valssse.github.io/ducaemail/Chicos%20estudiando.webp" alt="Chicos estudiando"
-                width="480" height="200" style="display: block; width: 100%; height: 200px; object-fit: cover;" />
+                width="700" height="200" style="display: block; width: 100%; height: 200px; object-fit: cover;" />
             </td>
           </tr>
 
